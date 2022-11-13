@@ -3,12 +3,17 @@
 
     class Contact_Controller{
         public static function create(){
-            $titulo = "Creación de comentario de contacto";
-            require_once "views/templates/header.php";
-            require_once "views/templates/navbar.php";
-            require_once "views/contact/create.php";
-            require_once "views/templates/footer.php";
+            if(isset($_SESSION["user"])){
+                $titulo = "Creación de comentario de contacto";
+                require_once "views/templates/header.php";
+                require_once "views/templates/navbar.php";
+                require_once "views/contact/create.php";
+                require_once "views/templates/footer.php";
+            }else{
+                header("location:index.php?"."c=".Security::encode("Home")."&m=".Security::encode("error")."&msg= Usuario o password incorrecto");
+            }
         }
+            
 
         public static function show(){
             if($_POST){

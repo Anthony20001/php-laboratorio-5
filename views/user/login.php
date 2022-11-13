@@ -22,6 +22,13 @@
                     <div id="textHelp" class="form-text"></div>
                 </div>
 
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="input_checkbox_remember_user">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Recordar datos
+                    </label>
+                </div>
+
                 <!-- El token siempre se usa en cada formulario, sea GET o POST -->
                 <input type="hidden" value="<?php echo Security::getToken()?>" name="token">
 

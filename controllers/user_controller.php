@@ -24,6 +24,10 @@
             if(count($result) > 0){
                 $_SESSION["user"] = $result["user"];
                 $_SESSION["name"] = $result["name"];
+                if(isset($_POST["input_checkbox_remember_user"])){
+                    setcookie("user", Security::encode($result["user"]), time()+60);
+                    setcookie("name", Security::encode($result["name"]), time()+60);
+                }
                 header("location:index.php");
             }else{
                 header("location:index.php?"."c=".Security::encode("User")."&m=".Security::encode("login")."&msg= Usuario o password incorrecto");
@@ -32,6 +36,8 @@
 
         public static function signoff(){
             session_destroy();
+            setcookie("user", Security::encode($_SESSION["user"]), time()-60);
+            setcookie("name", Security::encode($_SESSION["name"]), time()-60);
             header("location:index.php");
         }
     }

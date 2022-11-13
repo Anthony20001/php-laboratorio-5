@@ -17,6 +17,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
+
+                <?php if(isset($_SESSION["user"])){?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comentario</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
@@ -25,6 +27,8 @@
                         <a class="dropdown-item" href="#">Ver</a>
                     </div>
                 </li>
+                <?php }?>
+                
             </ul>
 
             <?php if(isset($_SESSION["user"])){?>
