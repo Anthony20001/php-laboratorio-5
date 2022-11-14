@@ -1,18 +1,61 @@
 <?php 
     class Product{
         private $id;
-        /*private $name;
+        private $name;
         private $description;
         private $cost;
         private $price;
-        private $stock; */
+        private $stock; 
 
 
-        public function __construct($id){
+        public function __construct($id, $description = "", $cost = "", $price = "", $stock = ""){
+            $this->id = $id;
+            $this->description = $description;
+            $this->cost = $cost;
+            $this->price = $price;
+            $this->stock = $stock;
+        }
+    
+        public function getId(){
+            return $this->id;
+        }
+    
+        public function setId($id){
             $this->id = $id;
         }
     
+        public function getDescription(){
+            return $this->description;
+        }
     
+        public function setDescription($description){
+            $this->description = $description;
+        }
+    
+        public function getCost(){
+            return $this->cost;
+        }
+    
+        public function setCost($cost){
+            $this->cost = $cost;
+        }
+    
+        public function getPrice(){
+            return $this->price;
+        }
+    
+        public function setPrice($price){
+            $this->price = $price;
+        }
+    
+        public function getStock(){
+            return $this->stock;
+        }
+    
+        public function setStock($stock){
+            $this->stock = $stock;
+        }
+
         public function getProducts(){
             $products = [
                 [

@@ -14,9 +14,14 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="index.php" aria-current="page">Home<span class="visually-hidden">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+
+                <?php if(isset($_SESSION["user"])){?>
+                    <li class="nav-item">
+                        <?php $controller = Security::encode("Product"); $method = Security::encode("search"); ?>
+                        <a class="nav-link" href="<?php echo "index.php?c=".$controller."&m=".$method;?>">Productos</a>
+                    </li>
+                <?php }?>
+
 
                 <?php if(isset($_SESSION["user"])){?>
                 <li class="nav-item dropdown">
@@ -28,15 +33,15 @@
                     </div>
                 </li>
                 <?php }?>
-                
+
             </ul>
 
-            <?php if(isset($_SESSION["user"])){?>
+            <!--<?php if(isset($_SESSION["user"])){?>
             <form class="d-flex my-2 my-lg-0">
                 <input class="form-control me-sm-2" type="text" placeholder="Buscar productos">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
-            <?php }?>
+            <?php }?>-->
 
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                 <?php if(isset($_SESSION["user"])){?>

@@ -27,7 +27,7 @@
                 empty($_POST["input_contacto_comment"]) ? $error[2] = "El comentario de contacto es necesario" : $comment = $_POST['input_contacto_comment'];
 
                 if(isset($error)){
-                    echo "<script>alert('Error en el formulario')</script>";
+                    //echo "<script>alert('Error en el formulario')</script>";
                     $titulo = "Creación de comentario de contacto";
                     require_once "views/templates/header.php";
                     require_once "views/templates/navbar.php";
