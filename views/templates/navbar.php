@@ -15,13 +15,6 @@
                     <a class="nav-link active" href="index.php" aria-current="page">Home<span class="visually-hidden">(current)</span></a>
                 </li>
 
-                <?php if(isset($_SESSION["user"])){?>
-                    <li class="nav-item">
-                        <?php $controller = Security::encode("Product"); $method = Security::encode("search"); ?>
-                        <a class="nav-link" href="<?php echo "index.php?c=".$controller."&m=".$method;?>">Productos</a>
-                    </li>
-                <?php }?>
-
 
                 <?php if(isset($_SESSION["user"])){?>
                 <li class="nav-item dropdown">
